@@ -1,1 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Client | GourmetGo</title>
+    <style>
+        :root {
+            --bleu: #00234f;
+            --orange: #f7941d;
+            --fond: #f4f6f8;
+            --texte: #28323c;
+            --blanc: #ffffff;
+        }
 
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--texte);
+            background: var(--fond);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            background: var(--blanc);
+            border-bottom: 3px solid var(--orange);
+        }
+
+        .logo {
+            color: var(--bleu);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--orange); }
+
+        nav a {
+            margin-left: 18px;
+            color: var(--bleu);
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover { color: var(--orange); }
+
+        main {
+            width: min(900px, 90%);
+            margin: 45px auto;
+        }
+
+        .welcome {
+            padding: 32px;
+            color: var(--blanc);
+            background: var(--bleu);
+            border-radius: 12px;
+        }
+
+        .welcome h1 { margin: 0 0 8px; }
+        .welcome p { margin: 0; opacity: 0.85; }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            padding: 24px;
+            background: var(--blanc);
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(0, 35, 79, 0.08);
+        }
+
+        .card h2 {
+            margin: 0 0 20px;
+            color: var(--bleu);
+            font-size: 1.25rem;
+        }
+
+        .avatar {
+            display: grid;
+            place-items: center;
+            width: 74px;
+            height: 74px;
+            margin-bottom: 18px;
+            border-radius: 50%;
+            color: var(--blanc);
+            background: var(--orange);
+            font-size: 1.7rem;
+            font-weight: bold;
+        }
+
+        .info { margin: 12px 0; }
+        .info strong { color: var(--bleu); }
+
+        .points {
+            color: var(--orange);
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 16px;
+            color: var(--blanc);
+            background: var(--bleu);
+            border-radius: 6px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .button:hover { background: var(--orange); }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            color: var(--blanc);
+            background: var(--bleu);
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 650px) {
+            header { align-items: flex-start; }
+            nav { display: grid; gap: 8px; text-align: right; }
+            nav a { margin: 0; }
+            .profile-grid { grid-template-columns: 1fr; }
+            .welcome { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">Gourmet<span>Go</span></a>
+        <nav aria-label="Navigation principale">
+            <a href="menu.html">La carte</a>
+            <a href="panier.html">Mon panier</a>
+            <a href="index.html">Accueil</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <h1>Bonjour, Sara !</h1>
+            <p>Bienvenue dans votre espace client GourmetGo.</p>
+        </section>
+
+        <div class="profile-grid">
+            <section class="card">
+                <div class="avatar" aria-hidden="true">SB</div>
+                <h2>Mes informations</h2>
+                <p class="info"><strong>Nom :</strong> Sara Bennani</p>
+                <p class="info"><strong>E-mail :</strong> sara@email.com</p>
+                <p class="info"><strong>Téléphone :</strong> 06 12 34 56 78</p>
+                <a class="button" href="#">Modifier mon profil</a>
+            </section>
+
+            <section class="card">
+                <h2>Mon adresse de livraison</h2>
+                <p>24, rue Al Massira</p>
+                <p>Casablanca, Maroc</p>
+                <a class="button" href="#">Modifier l'adresse</a>
+            </section>
+
+            <section class="card">
+                <h2>Mes points fidélité</h2>
+                <p class="points">240 pts</p>
+                <p>Encore 60 points pour obtenir une réduction.</p>
+            </section>
+
+            <section class="card">
+                <h2>Ma dernière commande</h2>
+                <p class="info"><strong>Commande :</strong> #GG-1042</p>
+                <p class="info"><strong>Total :</strong> 128 DH</p>
+                <p class="info"><strong>Statut :</strong> Livrée</p>
+                <a class="button" href="livraison.html">Voir mes commandes</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 GourmetGo — Espace Client
+    </footer>
+</body>
+</html>
