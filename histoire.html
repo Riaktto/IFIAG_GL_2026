@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Histoire</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f8f8f8;
+            color:#333;
+        }
+
+        .hero{
+            background:#1f2937;
+            color:white;
+            text-align:center;
+            padding:80px 20px;
+        }
+
+        .hero h1{
+            font-size:3rem;
+            margin-bottom:15px;
+        }
+
+        .container{
+            width:90%;
+            max-width:1100px;
+            margin:auto;
+            padding:60px 0;
+        }
+
+        .history{
+            display:flex;
+            gap:40px;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+
+        .history img{
+            width:100%;
+            max-width:500px;
+            border-radius:15px;
+        }
+
+        .content{
+            flex:1;
+        }
+
+        .content h2{
+            color:#1f2937;
+            margin-bottom:20px;
+        }
+
+        .content p{
+            line-height:1.8;
+            margin-bottom:15px;
+        }
+
+        .values{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+            margin-top:50px;
+        }
+
+        .card{
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 5px 15px rgba(0,0,0,.1);
+        }
+
+        .card h3{
+            margin-bottom:10px;
+            color:#2563eb;
+        }
+
+        footer{
+            background:#1f2937;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:60px;
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>Notre Histoire</h1>
+    <p>Découvrez comment notre entreprise est née et comment elle continue d'évoluer.</p>
+</section>
+
+<div class="container">
+
+    <div class="history">
+
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900" alt="Notre histoire">
+
+        <div class="content">
+
+            <h2>Une aventure commencée avec une idée</h2>
+
+            <p>
+                Notre entreprise est née de la volonté de proposer des solutions modernes,
+                simples et innovantes pour répondre aux besoins de nos utilisateurs.
+            </p>
+
+            <p>
+                Depuis nos débuts, nous avons placé la qualité, l'innovation et la
+                satisfaction client au cœur de notre développement.
+            </p>
+
+            <p>
+                Aujourd'hui, nous continuons à grandir grâce à une équipe passionnée
+                et à la confiance de nos clients.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="values">
+
+        <div class="card">
+            <h3>Notre Mission</h3>
+            <p>Créer des solutions fiables et accessibles pour tous.</p>
+        </div>
+
+        <div class="card">
+            <h3>Notre Vision</h3>
+            <p>Devenir une référence dans notre domaine grâce à l'innovation.</p>
+        </div>
+
+        <div class="card">
+            <h3>Nos Valeurs</h3>
+            <p>Innovation, qualité, confiance et esprit d'équipe.</p>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 - Tous droits réservés
+</footer>
+
+</body>
+</html>
