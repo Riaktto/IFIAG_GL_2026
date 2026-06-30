@@ -3,193 +3,456 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace Client | GourmetGo</title>
+    <title>Mon Profil - GourmetGo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        /* Global Theme Variables */
         :root {
-            --bleu: #00234f;
-            --orange: #f7941d;
-            --fond: #f4f6f8;
-            --texte: #28323c;
-            --blanc: #ffffff;
+            --primary: #00234F; /* Bleu IFIAG */
+            --secondary: #F7941D; /* Orange IFIAG */
+            --profile-color: #7B1FA2; /* Purple for Profile */
+            --dark: #333333;
+            --light: #F0F4F8;
+            --white: #FFFFFF;
         }
-
-        * { box-sizing: border-box; }
 
         body {
+            font-family: 'Roboto', sans-serif;
             margin: 0;
-            font-family: Georgia, "Times New Roman", serif;
-            color: var(--texte);
-            background: var(--fond);
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
+        /* Header & Navigation */
         header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 8%;
-            background: var(--blanc);
-            border-bottom: 3px solid var(--orange);
         }
 
         .logo {
-            color: var(--bleu);
-            font-size: 1.5rem;
+            font-size: 1.6em;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--primary);
             font-weight: bold;
-            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.2s ease-in-out;
+            padding: 8px 12px;
+            border-radius: 4px;
         }
 
-        .logo span { color: var(--orange); }
-
-        nav a {
-            margin-left: 18px;
-            color: var(--bleu);
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 0.9rem;
+        .nav-links li a:hover {
+            color: var(--white);
+            background-color: var(--secondary);
         }
 
-        nav a:hover { color: var(--orange); }
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, var(--profile-color) 0%, #5A0D7A 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+            flex-shrink: 0;
+        }
 
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* Main Container */
         main {
-            width: min(900px, 90%);
-            margin: 45px auto;
+            flex-grow: 1;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
-        .welcome {
-            padding: 32px;
-            color: var(--blanc);
-            background: var(--bleu);
-            border-radius: 12px;
+        .section-title {
+            color: var(--profile-color);
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            border-bottom: 3px solid var(--profile-color);
+            padding-bottom: 10px;
         }
 
-        .welcome h1 { margin: 0 0 8px; }
-        .welcome p { margin: 0; opacity: 0.85; }
+        /* Profile Container */
+        .profile-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
 
-        .profile-grid {
+        @media (max-width: 768px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 25px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 4px solid var(--profile-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--profile-color);
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Profile Info Section */
+        .profile-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 10px 12px;
+            border: 1px solid #DDD;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95em;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--profile-color);
+            box-shadow: 0 0 5px rgba(123, 31, 162, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* Loyalty Points */
+        .loyalty-card {
+            background: linear-gradient(135deg, var(--profile-color) 0%, #5A0D7A 100%);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .loyalty-card h4 {
+            margin-top: 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .loyalty-points {
+            font-size: 3em;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        .loyalty-status {
+            font-size: 0.95em;
+            opacity: 0.85;
+        }
+
+        /* Address List */
+        .address-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
             margin-top: 20px;
         }
 
-        .card {
-            padding: 24px;
-            background: var(--blanc);
-            border-radius: 12px;
-            box-shadow: 0 5px 18px rgba(0, 35, 79, 0.08);
-        }
-
-        .card h2 {
-            margin: 0 0 20px;
-            color: var(--bleu);
-            font-size: 1.25rem;
-        }
-
-        .avatar {
-            display: grid;
-            place-items: center;
-            width: 74px;
-            height: 74px;
-            margin-bottom: 18px;
-            border-radius: 50%;
-            color: var(--blanc);
-            background: var(--orange);
-            font-size: 1.7rem;
-            font-weight: bold;
-        }
-
-        .info { margin: 12px 0; }
-        .info strong { color: var(--bleu); }
-
-        .points {
-            color: var(--orange);
-            font-size: 2.2rem;
-            font-weight: bold;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 16px;
-            color: var(--blanc);
-            background: var(--bleu);
+        .address-item {
+            background-color: var(--light);
+            padding: 15px;
             border-radius: 6px;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 0.9rem;
+            border-left: 4px solid var(--profile-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
         }
 
-        .button:hover { background: var(--orange); }
+        .address-info {
+            flex-grow: 1;
+        }
 
-        footer {
-            padding: 20px;
+        .address-label {
+            font-weight: 600;
+            color: var(--profile-color);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .address-text {
+            color: var(--dark);
+            margin: 5px 0 0 0;
+            line-height: 1.4;
+        }
+
+        .address-btn {
+            display: inline-block;
+            background-color: var(--profile-color);
+            color: var(--white);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-left: 10px;
+            white-space: nowrap;
+        }
+
+        .address-btn:hover {
+            background-color: #5A0D7A;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--profile-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 15px;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background-color: #5A0D7A;
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: #F0791C;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* Empty State */
+        .empty-state {
             text-align: center;
-            color: var(--blanc);
-            background: var(--bleu);
-            font-family: Arial, sans-serif;
-            font-size: 0.85rem;
+            padding: 30px;
+            color: #999;
         }
 
-        @media (max-width: 650px) {
-            header { align-items: flex-start; }
-            nav { display: grid; gap: 8px; text-align: right; }
-            nav a { margin: 0; }
-            .profile-grid { grid-template-columns: 1fr; }
-            .welcome { padding: 24px; }
+        .empty-state p {
+            margin: 10px 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 15px 20px;
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+
+        footer span {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Full Width Form Group */
+        .form-group-full {
+            grid-column: 1 / -1;
         }
     </style>
 </head>
 <body>
+
+    <!-- Header & Navigation -->
     <header>
-        <a class="logo" href="index.html">Gourmet<span>Go</span></a>
-        <nav aria-label="Navigation principale">
-            <a href="menu.html">La carte</a>
-            <a href="panier.html">Mon panier</a>
-            <a href="index.html">Accueil</a>
+        <a href="index.html" class="logo">Gourmet<span>Go</span></a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="menu.html">La Carte</a></li>
+                <li><a href="panier.html">Panier</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="livraison.html">Livraison</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
+    <!-- Hero Banner -->
+    <section class="hero">
+        <h1>👤 Mon Profil</h1>
+        <p>Gérez vos informations personnelles et vos préférences de livraison</p>
+    </section>
+
+    <!-- Main Content -->
     <main>
-        <section class="welcome">
-            <h1>Bonjour, Sara !</h1>
-            <p>Bienvenue dans votre espace client GourmetGo.</p>
-        </section>
-
-        <div class="profile-grid">
-            <section class="card">
-                <div class="avatar" aria-hidden="true">SB</div>
-                <h2>Mes informations</h2>
-                <p class="info"><strong>Nom :</strong> Sara Bennani</p>
-                <p class="info"><strong>E-mail :</strong> sara@email.com</p>
-                <p class="info"><strong>Téléphone :</strong> 06 12 34 56 78</p>
-                <a class="button" href="#">Modifier mon profil</a>
-            </section>
-
-            <section class="card">
-                <h2>Mon adresse de livraison</h2>
-                <p>24, rue Al Massira</p>
-                <p>Casablanca, Maroc</p>
-                <a class="button" href="#">Modifier l'adresse</a>
-            </section>
-
-            <section class="card">
-                <h2>Mes points fidélité</h2>
-                <p class="points">240 pts</p>
-                <p>Encore 60 points pour obtenir une réduction.</p>
-            </section>
-
-            <section class="card">
-                <h2>Ma dernière commande</h2>
-                <p class="info"><strong>Commande :</strong> #GG-1042</p>
-                <p class="info"><strong>Total :</strong> 128 DH</p>
-                <p class="info"><strong>Statut :</strong> Livrée</p>
-                <a class="button" href="livraison.html">Voir mes commandes</a>
-            </section>
+        <!-- Personal Information -->
+        <h2 class="section-title">Mes Informations</h2>
+        <div class="card">
+            <h3>👤 Profil</h3>
+            <div class="profile-info">
+                <div class="form-group">
+                    <label for="firstName">Prénom</label>
+                    <input type="text" id="firstName" value="Jean" placeholder="Votre prénom">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Nom</label>
+                    <input type="text" id="lastName" value="Dupont" placeholder="Votre nom">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" value="jean.dupont@email.com" placeholder="Votre email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" value="+33 6 12 34 56 78" placeholder="Votre téléphone">
+                </div>
+            </div>
+            <button class="btn">Modifier</button>
         </div>
+
+        <!-- Delivery Addresses -->
+        <h2 class="section-title">Adresses de Livraison</h2>
+        <div class="card">
+            <div class="address-list">
+                <div class="address-item">
+                    <div class="address-info">
+                        <div class="address-label">🏠 Domicile</div>
+                        <div class="address-text">42 Rue de la Paix, 75001 Paris</div>
+                    </div>
+                    <button class="address-btn">Modifier</button>
+                </div>
+                <div class="address-item">
+                    <div class="address-info">
+                        <div class="address-label">💼 Bureau</div>
+                        <div class="address-text">15 Avenue des Champs-Élysées, 75008 Paris</div>
+                    </div>
+                    <button class="address-btn">Modifier</button>
+                </div>
+            </div>
+            <button class="btn" style="margin-top: 20px;">+ Ajouter une Adresse</button>
+        </div>
+
+        <!-- Recent Orders -->
+        <h2 class="section-title">Commandes Récentes</h2>
+        <div class="card">
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--profile-color);">
+                        <th style="text-align: left; padding: 12px; color: var(--profile-color);">Date</th>
+                        <th style="text-align: left; padding: 12px; color: var(--profile-color);">Commande</th>
+                        <th style="text-align: left; padding: 12px; color: var(--profile-color);">Montant</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #EEE;">
+                        <td style="padding: 12px;">28/06/2026</td>
+                        <td style="padding: 12px;">Pizza Margherita + Coca</td>
+                        <td style="padding: 12px; font-weight: 600;">18,50 €</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #EEE;">
+                        <td style="padding: 12px;">26/06/2026</td>
+                        <td style="padding: 12px;">Burger Gourmand + Frites</td>
+                        <td style="padding: 12px; font-weight: 600;">15,99 €</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px;">22/06/2026</td>
+                        <td style="padding: 12px;">Salade César</td>
+                        <td style="padding: 12px; font-weight: 600;">12,50 €</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
     </main>
 
+    <!-- Footer -->
     <footer>
-        &copy; 2026 GourmetGo — Espace Client
+        <p>&copy; 2024 GourmetGo Portal. Fièrement propulsé par les étudiants de l'<span>IFIAG</span>.</p>
     </footer>
+
 </body>
 </html>
