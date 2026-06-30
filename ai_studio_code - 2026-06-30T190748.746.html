@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GourmetGo - Le Portail de Livraison</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Theme Variables */
+        :root {
+            --primary: #00234F; /* Bleu IFIAG */
+            --secondary: #F7941D; /* Orange IFIAG */
+            --dark: #333333;
+            --light: #F0F4F8;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        /* ========================================================= */
+        /* ZONE DE CONFLIT DU TP : LES ETUDIANTS DOIVENT AJOUTER LEUR 
+           LIEN <li> À L'INTÉRIEUR DE CETTE LISTE <ul> */
+        /* ========================================================= */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1em;
+            transition: color 0.2s ease-in-out;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        .nav-links li a:hover {
+            color: var(--white);
+            background-color: var(--secondary);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+            flex-shrink: 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* Main Container & Grid */
+        main {
+            flex-grow: 1;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 1.8em;
+        }
+
+        .grid-portal {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* Module Cards */
+        .card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 25px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 4px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card p {
+            color: #666666;
+            font-size: 0.95em;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .card-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: background-color 0.2s;
+            margin-top: 15px;
+        }
+
+        .card-btn:hover {
+            background-color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 15px 20px;
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+
+        footer span {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <a href="#" class="logo">Gourmet<span>Go</span></a>
+        <nav>
+            <!-- ======================================================== -->
+            /* ZONE DE CONFLIT DU TP : SQUADS 1 à 6 */
+            /* Chaque groupe devra cloner, ajouter son <li> ci-dessous, */
+            /* puis gérer le conflit de fusion lors du "git pull / push" */
+            <!-- ======================================================== -->
+            <ul class="nav-links">
+                <!-- SQUAD-LINKS-START -->
+                <!-- Les étudiants vont insérer leurs lignes ici. Exemple : -->
+                <!-- <li><a href="menu.html">La Carte</a></li> -->
+                <!-- SQUAD-LINKS-END -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <h1>Portail Web GourmetGo</h1>
+        <p>L'expérience culinaire digitale connectée, fluide et rapide.</p>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <h2 class="section-title">Nos Modules Applicatifs</h2>
+        
+        <div class="grid-portal">
+            
+            <!-- Card 1 : Squad Menu -->
+            <div class="card" style="border-top-color: #F7941D;">
+                <h3>🍕 La Carte</h3>
+                <p>Découvrez notre large sélection de pizzas artisanales, burgers gourmets et salades fraîches cuisinés avec amour.</p>
+                <a href="menu.html" class="card-btn" style="background-color: #F7941D;">Consulter la Carte</a>
+            </div>
+
+            <!-- Card 2 : Squad Panier -->
+            <div class="card" style="border-top-color: #0277BD;">
+                <h3>🛒 Le Panier d'Achat</h3>
+                <p>Visualisez les plats sélectionnés, appliquez vos codes de réduction et préparez votre commande.</p>
+                <a href="panier.html" class="card-btn" style="background-color: #0277BD;">Voir mon Panier</a>
+            </div>
+
+            <!-- Card 3 : Squad Espace Client -->
+            <div class="card" style="border-top-color: #7B1FA2;">
+                <h3>👤 Espace Client</h3>
+                <p>Gérez vos informations personnelles, enregistrez vos adresses favorites de livraison et suivez vos points fidélité.</p>
+                <a href="profil.html" class="card-btn" style="background-color: #7B1FA2;">Mon Profil</a>
+            </div>
+
+            <!-- Card 4 : Squad Suivi Livraison -->
+            <div class="card" style="border-top-color: #00796B;">
+                <h3>📍 Suivi Livraison</h3>
+                <p>Suivez votre livreur à vélo en temps réel sur la carte, de la sortie des cuisines jusqu'à votre porte.</p>
+                <a href="livraison.html" class="card-btn" style="background-color: #00796B;">Suivre ma Livraison</a>
+            </div>
+
+            <!-- Card 5 : Squad Contact -->
+            <div class="card" style="border-top-color: #AFB42B;">
+                <h3>📞 Service Contact</h3>
+                <p>Une question ? Une réclamation ? Retrouvez les horaires et les coordonnées de tous nos restaurants de proximité.</p>
+                <a href="contact.html" class="card-btn" style="background-color: #AFB42B;">Nous Contacter</a>
+            </div>
+
+            <!-- Card 6 : Squad About -->
+            <div class="card" style="border-top-color: #D84315;">
+                <h3>📖 Notre Histoire</h3>
+                <p>Découvrez qui se cache derrière GourmetGo, notre charte de qualité et nos engagements pour l'environnement.</p>
+                <a href="about.html" class="card-btn" style="background-color: #D84315;">Découvrir l'Équipe</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 GourmetGo Portal. Fièrement propulsé par les étudiants de l'<span>IFIAG</span>.</p>
+    </footer>
+
+</body>
+</html>
