@@ -2,9 +2,79 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suivi de Livraison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .status-box {
+            background-color: #e2f0d9;
+            color: #385723;
+            padding: 15px;
+            border-left: 5px solid #70ad47;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .timeline {
+            list-style: none;
+            padding: 0;
+        }
+        .timeline li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        .timeline li:last-child {
+            border-bottom: none;
+        }
+        .date {
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
-    <h1>Suivi de votre livraison</h1>
+
+    <div class="container">
+        <h1>Suivi de Votre Livraison</h1>
+        
+        <div class="status-box">
+            <strong>Statut actuel :</strong> En cours de livraison — Le livreur est en chemin.
+        </div>
+
+        <h3>Historique de la commande</h3>
+        <ul class="timeline">
+            <li>
+                <span>Commande préparée</span>
+                <span class="date">30 Juin 2026 - 10:00</span>
+            </li>
+            <li>
+                <span>Commande expédiée</span>
+                <span class="date">30 Juin 2026 - 14:30</span>
+            </li>
+            <li>
+                <span>Arrivée au centre de tri</span>
+                <span class="date">30 Juin 2026 - 18:00</span>
+            </li>
+        </ul>
+    </div>
+
 </body>
 </html>
